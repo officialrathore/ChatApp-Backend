@@ -13,7 +13,7 @@ const MONGO_URI= process.env.MONGO_URI;
 // const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173", // Yahan tumhare frontend ka URL hona chahiye
+    origin: "https://chat-app-frontend-amber-rho.vercel.app", // Yahan tumhare frontend ka URL hona chahiye
     credentials: true,
 }));
 
