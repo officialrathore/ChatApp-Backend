@@ -33,7 +33,7 @@ app.use('/api/message', userMessage);
 app.get('/', (req, res) => {
   res.send('Welcome to the Chat App Backend');
 });
-
+export default app;
 // server.listen(PORT, () => {
 //   console.log(`Server is running on port http://localhost:${PORT}`);
 // });
