@@ -51,7 +51,7 @@ export const login = async (req, res) => {
         fullname: user.fullname,
         email: user.email,
         id: user._id,
-    } });
+    }, token });
 
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });

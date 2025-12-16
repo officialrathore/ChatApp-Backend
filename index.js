@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 import { io, server,app} from './SocketIO/server.js';
 
 const PORT = process.env.PORT || 3000;
-const MONGO_URI= process.env.MONGO_URI||"mongodb://localhost:27017/ChatApp";
+const MONGO_URI= process.env.MONGO_URI;
 
 
 app.use(cors({
