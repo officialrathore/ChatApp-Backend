@@ -8,12 +8,11 @@ import cookieParser from 'cookie-parser';
 import { io, server,app} from './SocketIO/server.js';
 
 const PORT = process.env.PORT || 3000;
-const MONGO_URI= process.env.MONGO_URI;
+const MONGO_URI= process.env.MONGO_URI||"mongodb://localhost:27017/ChatApp";
 
-// const app = express();
 
 app.use(cors({
-    origin: "https://chat-app-frontend-amber-rho.vercel.app", // Yahan tumhare frontend ka URL hona chahiye
+    origin: [process.env.CLIENT_URL,process.env.CLIENT_URL_LOCAL], 
     credentials: true,
 }));
 
@@ -33,7 +32,7 @@ app.use('/api/message', userMessage);
 app.get('/', (req, res) => {
   res.send('Welcome to the Chat App Backend');
 });
-export default app;
-// server.listen(PORT, () => {
-//   console.log(`Server is running on port http://localhost:${PORT}`);
-// });
+server.listen(PORT, () => {
+    console.log(`Server is running on port http://localhost:${PORT}`);
+});
+// export default app;

@@ -7,9 +7,8 @@ const server = http.createServer(app);
 
 const io = new Server(server,{
     cors:{
-        origin:"https://chat-app-frontend-amber-rho.vercel.app",
-        methods:["GET", "POST"],
-        credentials: true,
+        origin:[process.env.CLIENT_URL,process.env.CLIENT_URL_LOCAL],
+        credentials:true,
     }
 });
 

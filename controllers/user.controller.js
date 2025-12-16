@@ -25,14 +25,7 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
     await newUser.save();
-    if (newUser) {
-      createTokenAndSaveCookie(newUser._id, res);
-      res.status(201).json({ message: "User registered successfully", newUser:{
-          id: newUser._id,
-          fullname: newUser.fullname,
-          email: newUser.email,
-      } });
-    }
+      res.status(201).json({ message: "User registered successfully"});
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
